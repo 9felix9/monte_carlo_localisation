@@ -1,0 +1,15 @@
+running develop
+running egg_info
+writing mcl_localization.egg-info/PKG-INFO
+writing dependency_links to mcl_localization.egg-info/dependency_links.txt
+writing requirements to mcl_localization.egg-info/requires.txt
+writing top-level names to mcl_localization.egg-info/top_level.txt
+reading manifest file 'mcl_localization.egg-info/SOURCES.txt'
+writing manifest file 'mcl_localization.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/lib/python3.12/site-packages/mcl-localization.egg-link (link to .)
+
+Installed /home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization
+running symlink_data
+symbolically linking /home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/resource/mcl_localization -> /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/share/ament_index/resource_index/packages
+symbolically linking /home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/package.xml -> /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/share/mcl_localization

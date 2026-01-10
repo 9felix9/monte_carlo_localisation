@@ -1,0 +1,31 @@
+running egg_info
+creating ../../build/mcl_localization/mcl_localization.egg-info
+writing ../../build/mcl_localization/mcl_localization.egg-info/PKG-INFO
+writing dependency_links to ../../build/mcl_localization/mcl_localization.egg-info/dependency_links.txt
+writing requirements to ../../build/mcl_localization/mcl_localization.egg-info/requires.txt
+writing top-level names to ../../build/mcl_localization/mcl_localization.egg-info/top_level.txt
+writing manifest file '../../build/mcl_localization/mcl_localization.egg-info/SOURCES.txt'
+reading manifest file '../../build/mcl_localization/mcl_localization.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/mcl_localization/mcl_localization.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/build
+creating /home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/build/lib
+creating /home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/build/lib/mcl_localization
+copying mcl_localization/__init__.py -> /home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/build/lib/mcl_localization
+running install
+running install_lib
+creating /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/lib/python3.12/site-packages/mcl_localization
+copying /home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/build/lib/mcl_localization/__init__.py -> /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/lib/python3.12/site-packages/mcl_localization
+byte-compiling /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/lib/python3.12/site-packages/mcl_localization/__init__.py to __init__.cpython-312.pyc
+running install_data
+creating /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/share/ament_index
+creating /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/share/ament_index/resource_index
+creating /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/share/ament_index/resource_index/packages
+copying resource/mcl_localization -> /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/share/ament_index/resource_index/packages
+copying package.xml -> /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/share/mcl_localization
+running install_egg_info
+Copying ../../build/mcl_localization/mcl_localization.egg-info to /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/lib/python3.12/site-packages/mcl_localization-0.0.0-py3.12.egg-info
+running install_scripts
+writing list of installed files to '/home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/install.log'

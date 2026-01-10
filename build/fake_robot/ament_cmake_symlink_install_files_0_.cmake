@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_files("/home/felix/Schreibtisch/projects/robotics_hw2/src/fake_robot" FILES "/home/felix/Schreibtisch/projects/robotics_hw2/build/fake_robot/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/fake_robot" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")

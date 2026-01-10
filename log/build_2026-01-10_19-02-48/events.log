@@ -1,0 +1,270 @@
+[0.000000] (-) TimerEvent: {}
+[0.000180] (fake_robot) JobQueued: {'identifier': 'fake_robot', 'dependencies': OrderedDict()}
+[0.000438] (mcl_localization) JobQueued: {'identifier': 'mcl_localization', 'dependencies': OrderedDict()}
+[0.001049] (fake_robot) JobStarted: {'identifier': 'fake_robot'}
+[0.010634] (mcl_localization) JobStarted: {'identifier': 'mcl_localization'}
+[0.022710] (fake_robot) JobProgress: {'identifier': 'fake_robot', 'progress': 'cmake'}
+[0.023887] (fake_robot) Command: {'cmd': ['/usr/bin/cmake', '/home/felix/Schreibtisch/projects/robotics_hw2/src/fake_robot', '-DCMAKE_INSTALL_PREFIX=/home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot'], 'cwd': '/home/felix/Schreibtisch/projects/robotics_hw2/build/fake_robot', 'env': OrderedDict({'PYTHON_BASIC_REPL': '1', 'CONDA_PROMPT_MODIFIER': '', 'USER': 'felix', 'GZ_CONFIG_PATH': '/opt/ros/kilted/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/kilted/opt/zenoh_cpp_vendor/lib:/opt/ros/kilted/opt/sdformat_vendor/lib:/opt/ros/kilted/opt/gz_math_vendor/lib:/opt/ros/kilted/opt/gz_utils_vendor/lib:/opt/ros/kilted/opt/rviz_ogre_vendor/lib:/opt/ros/kilted/lib/x86_64-linux-gnu:/opt/ros/kilted/opt/gz_tools_vendor/lib:/opt/ros/kilted/opt/gz_cmake_vendor/lib:/opt/ros/kilted/lib', 'OLDPWD': '/home/felix/Schreibtisch/projects/robotics_hw2/src', 'HOME': '/home/felix', 'LESS': '-R', 'CONDA_SHLVL': '0', 'CHROME_DESKTOP': 'code.desktop', 'DESKTOP_SESSION': 'ubuntu', 'TERM_PROGRAM_VERSION': '1.106.3', 'ZSH': '/home/felix/.oh-my-zsh', 'LSCOLORS': 'Gxfxcxdxbxegedabagacad', 'GTK_MODULES': 'gail:atk-bridge', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'PAGER': 'less', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'SYSTEMD_EXEC_PID': '2514', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/home/felix/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/felix/miniconda3', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', '_colcon_cd_root': '/opt/ros/kilted/', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'kilted', 'LOGNAME': 'felix', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'ROS_VERSION': '2', 'USER_ZDOTDIR': '/home/felix', 'USERNAME': 'felix', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'PATH': '/home/felix/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/felix/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/felix/miniconda3/condabin:/opt/ros/kilted/opt/gz_tools_vendor/bin:/opt/ros/kilted/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/felix/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/felix-ThinkPad-S3-S440:@/tmp/.ICE-unix/2252,unix/felix-ThinkPad-S3-S440:/tmp/.ICE-unix/2252', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/0780de8a_9416_499a_b69f_7da4cbce78f1', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'XDG_CURRENT_DESKTOP': 'Unity', 'LANG': 'en_US.UTF-8', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/felix/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-bb46482cc877cf46.txt', 'PYTHONSTARTUP': '/home/felix/.config/Code/User/workspaceStorage/302e31aeecd85555fd23cb53f3907d5b/ms-python.python/pythonrc.py', 'VSCODE_INJECTION': '1', 'XDG_SESSION_DESKTOP': 'ubuntu', 'GNOME_TERMINAL_SERVICE': ':1.138', 'XMODIFIERS': '@im=ibus', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.UY7EJ3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'TERM_PROGRAM': 'vscode', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-97d8920bc4.sock', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/kilted', 'ROS_DOMAIN_ID': '0', 'CONDA_PYTHON_EXE': '/home/felix/miniconda3/bin/python', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'SHELL': '/usr/bin/zsh', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'CONDA_DEFAULT_ENV': '', '_CONDA_EXE': '/home/felix/miniconda3/bin/conda', 'QT_IM_MODULE': 'ibus', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'LC_ALL': 'en_US.UTF-8', 'PWD': '/home/felix/Schreibtisch/projects/robotics_hw2/build/fake_robot', 'XDG_DATA_DIRS': '/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'CONDA_EXE': '/home/felix/miniconda3/bin/conda', 'ZDOTDIR': '/home/felix', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/ros/kilted/lib/python3.12/site-packages', 'CONDA_PREFIX': '', 'COLCON': '1', 'VTE_VERSION': '7600', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/kilted/opt/sdformat_vendor:/opt/ros/kilted/opt/gz_math_vendor:/opt/ros/kilted/opt/gz_utils_vendor:/opt/ros/kilted/opt/gz_tools_vendor:/opt/ros/kilted/opt/gz_cmake_vendor:/opt/ros/kilted'}), 'shell': False}
+[0.100296] (-) TimerEvent: {}
+[0.200683] (-) TimerEvent: {}
+[0.288406] (fake_robot) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.300791] (-) TimerEvent: {}
+[0.401106] (-) TimerEvent: {}
+[0.455340] (fake_robot) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.482710] (fake_robot) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.501270] (-) TimerEvent: {}
+[0.601575] (-) TimerEvent: {}
+[0.642279] (fake_robot) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.660054] (fake_robot) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.661157] (fake_robot) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.663377] (fake_robot) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.677617] (fake_robot) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.701691] (-) TimerEvent: {}
+[0.801995] (-) TimerEvent: {}
+[0.841003] (fake_robot) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.859582] (fake_robot) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.860071] (fake_robot) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.860960] (fake_robot) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.874388] (fake_robot) StdoutLine: {'line': b'-- Found ament_cmake: 2.7.3 (/opt/ros/kilted/share/ament_cmake/cmake)\n'}
+[0.902090] (-) TimerEvent: {}
+[1.002394] (-) TimerEvent: {}
+[1.102736] (-) TimerEvent: {}
+[1.124577] (fake_robot) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[1.202849] (-) TimerEvent: {}
+[1.303178] (-) TimerEvent: {}
+[1.309294] (fake_robot) StdoutLine: {'line': b'-- Found rclcpp: 29.5.4 (/opt/ros/kilted/share/rclcpp/cmake)\n'}
+[1.387748] (fake_robot) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.9.5 (/opt/ros/kilted/share/rosidl_generator_c/cmake)\n'}
+[1.403256] (-) TimerEvent: {}
+[1.409890] (fake_robot) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.9.5 (/opt/ros/kilted/share/rosidl_generator_cpp/cmake)\n'}
+[1.456309] (fake_robot) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.499325] (fake_robot) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.503356] (-) TimerEvent: {}
+[1.603688] (-) TimerEvent: {}
+[1.660346] (fake_robot) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.8.2 (/opt/ros/kilted/share/rmw_implementation_cmake/cmake)\n'}
+[1.666194] (fake_robot) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 9.3.3 (/opt/ros/kilted/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.703843] (-) TimerEvent: {}
+[1.789549] (mcl_localization) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/mcl_localization', 'build', '--build-base', '/home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/build', 'install', '--record', '/home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/felix/Schreibtisch/projects/robotics_hw2/src/mcl_localization', 'env': {'PYTHON_BASIC_REPL': '1', 'CONDA_PROMPT_MODIFIER': '', 'USER': 'felix', 'GZ_CONFIG_PATH': '/opt/ros/kilted/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/kilted/opt/zenoh_cpp_vendor/lib:/opt/ros/kilted/opt/sdformat_vendor/lib:/opt/ros/kilted/opt/gz_math_vendor/lib:/opt/ros/kilted/opt/gz_utils_vendor/lib:/opt/ros/kilted/opt/rviz_ogre_vendor/lib:/opt/ros/kilted/lib/x86_64-linux-gnu:/opt/ros/kilted/opt/gz_tools_vendor/lib:/opt/ros/kilted/opt/gz_cmake_vendor/lib:/opt/ros/kilted/lib', 'OLDPWD': '/home/felix/Schreibtisch/projects/robotics_hw2/src', 'HOME': '/home/felix', 'LESS': '-R', 'CONDA_SHLVL': '0', 'CHROME_DESKTOP': 'code.desktop', 'DESKTOP_SESSION': 'ubuntu', 'TERM_PROGRAM_VERSION': '1.106.3', 'ZSH': '/home/felix/.oh-my-zsh', 'LSCOLORS': 'Gxfxcxdxbxegedabagacad', 'GTK_MODULES': 'gail:atk-bridge', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'PAGER': 'less', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'SYSTEMD_EXEC_PID': '2514', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/home/felix/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/felix/miniconda3', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', '_colcon_cd_root': '/opt/ros/kilted/', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'kilted', 'LOGNAME': 'felix', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'ROS_VERSION': '2', 'USER_ZDOTDIR': '/home/felix', 'USERNAME': 'felix', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'PATH': '/home/felix/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/felix/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/felix/miniconda3/condabin:/opt/ros/kilted/opt/gz_tools_vendor/bin:/opt/ros/kilted/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/felix/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/felix-ThinkPad-S3-S440:@/tmp/.ICE-unix/2252,unix/felix-ThinkPad-S3-S440:/tmp/.ICE-unix/2252', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/0780de8a_9416_499a_b69f_7da4cbce78f1', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'XDG_CURRENT_DESKTOP': 'Unity', 'LANG': 'en_US.UTF-8', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/felix/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-bb46482cc877cf46.txt', 'PYTHONSTARTUP': '/home/felix/.config/Code/User/workspaceStorage/302e31aeecd85555fd23cb53f3907d5b/ms-python.python/pythonrc.py', 'VSCODE_INJECTION': '1', 'XDG_SESSION_DESKTOP': 'ubuntu', 'GNOME_TERMINAL_SERVICE': ':1.138', 'XMODIFIERS': '@im=ibus', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.UY7EJ3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'TERM_PROGRAM': 'vscode', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-97d8920bc4.sock', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/kilted', 'ROS_DOMAIN_ID': '0', 'CONDA_PYTHON_EXE': '/home/felix/miniconda3/bin/python', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'SHELL': '/usr/bin/zsh', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'CONDA_DEFAULT_ENV': '', '_CONDA_EXE': '/home/felix/miniconda3/bin/conda', 'QT_IM_MODULE': 'ibus', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'LC_ALL': 'en_US.UTF-8', 'PWD': '/home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization', 'XDG_DATA_DIRS': '/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'CONDA_EXE': '/home/felix/miniconda3/bin/conda', 'ZDOTDIR': '/home/felix', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/lib/python3.12/site-packages:/opt/ros/kilted/lib/python3.12/site-packages', 'CONDA_PREFIX': '', 'COLCON': '1', 'VTE_VERSION': '7600', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/kilted/opt/sdformat_vendor:/opt/ros/kilted/opt/gz_math_vendor:/opt/ros/kilted/opt/gz_utils_vendor:/opt/ros/kilted/opt/gz_tools_vendor:/opt/ros/kilted/opt/gz_cmake_vendor'}, 'shell': False}
+[1.803949] (-) TimerEvent: {}
+[1.841940] (fake_robot) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[1.859078] (fake_robot) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.904078] (-) TimerEvent: {}
+[2.001559] (fake_robot) StdoutLine: {'line': b'-- Found geometry_msgs: 5.5.1 (/opt/ros/kilted/share/geometry_msgs/cmake)\n'}
+[2.004168] (-) TimerEvent: {}
+[2.087983] (fake_robot) StdoutLine: {'line': b'-- Found sensor_msgs: 5.5.1 (/opt/ros/kilted/share/sensor_msgs/cmake)\n'}
+[2.104266] (-) TimerEvent: {}
+[2.144071] (fake_robot) StdoutLine: {'line': b'-- Found nav_msgs: 5.5.1 (/opt/ros/kilted/share/nav_msgs/cmake)\n'}
+[2.203855] (fake_robot) StdoutLine: {'line': b'-- Found tf2_ros: 0.41.4 (/opt/ros/kilted/share/tf2_ros/cmake)\n'}
+[2.204345] (-) TimerEvent: {}
+[2.269298] (mcl_localization) StdoutLine: {'line': b'running egg_info\n'}
+[2.269928] (mcl_localization) StdoutLine: {'line': b'creating ../../build/mcl_localization/mcl_localization.egg-info\n'}
+[2.300963] (mcl_localization) StdoutLine: {'line': b'writing ../../build/mcl_localization/mcl_localization.egg-info/PKG-INFO\n'}
+[2.301383] (mcl_localization) StdoutLine: {'line': b'writing dependency_links to ../../build/mcl_localization/mcl_localization.egg-info/dependency_links.txt\n'}
+[2.301724] (mcl_localization) StdoutLine: {'line': b'writing requirements to ../../build/mcl_localization/mcl_localization.egg-info/requires.txt\n'}
+[2.302004] (mcl_localization) StdoutLine: {'line': b'writing top-level names to ../../build/mcl_localization/mcl_localization.egg-info/top_level.txt\n'}
+[2.302280] (mcl_localization) StdoutLine: {'line': b"writing manifest file '../../build/mcl_localization/mcl_localization.egg-info/SOURCES.txt'\n"}
+[2.304434] (-) TimerEvent: {}
+[2.375489] (mcl_localization) StdoutLine: {'line': b"reading manifest file '../../build/mcl_localization/mcl_localization.egg-info/SOURCES.txt'\n"}
+[2.375841] (mcl_localization) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[2.376644] (mcl_localization) StdoutLine: {'line': b"writing manifest file '../../build/mcl_localization/mcl_localization.egg-info/SOURCES.txt'\n"}
+[2.376981] (mcl_localization) StdoutLine: {'line': b'running build\n'}
+[2.377259] (mcl_localization) StdoutLine: {'line': b'running build_py\n'}
+[2.377548] (mcl_localization) StdoutLine: {'line': b'creating /home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/build\n'}
+[2.377755] (mcl_localization) StdoutLine: {'line': b'creating /home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/build/lib\n'}
+[2.377953] (mcl_localization) StdoutLine: {'line': b'creating /home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/build/lib/mcl_localization\n'}
+[2.378116] (mcl_localization) StdoutLine: {'line': b'copying mcl_localization/__init__.py -> /home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/build/lib/mcl_localization\n'}
+[2.378267] (mcl_localization) StdoutLine: {'line': b'running install\n'}
+[2.386561] (mcl_localization) StdoutLine: {'line': b'running install_lib\n'}
+[2.404537] (-) TimerEvent: {}
+[2.420758] (mcl_localization) StdoutLine: {'line': b'creating /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/lib/python3.12/site-packages/mcl_localization\n'}
+[2.421145] (mcl_localization) StdoutLine: {'line': b'copying /home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/build/lib/mcl_localization/__init__.py -> /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/lib/python3.12/site-packages/mcl_localization\n'}
+[2.421851] (mcl_localization) StdoutLine: {'line': b'byte-compiling /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/lib/python3.12/site-packages/mcl_localization/__init__.py to __init__.cpython-312.pyc\n'}
+[2.422252] (mcl_localization) StdoutLine: {'line': b'running install_data\n'}
+[2.422537] (mcl_localization) StdoutLine: {'line': b'creating /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/share/ament_index\n'}
+[2.422808] (mcl_localization) StdoutLine: {'line': b'creating /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/share/ament_index/resource_index\n'}
+[2.423059] (mcl_localization) StdoutLine: {'line': b'creating /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/share/ament_index/resource_index/packages\n'}
+[2.423333] (mcl_localization) StdoutLine: {'line': b'copying resource/mcl_localization -> /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/share/ament_index/resource_index/packages\n'}
+[2.423524] (mcl_localization) StdoutLine: {'line': b'copying package.xml -> /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/share/mcl_localization\n'}
+[2.423706] (mcl_localization) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.462806] (fake_robot) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/kilted/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:87 (message):\n'}
+[2.463127] (fake_robot) StderrLine: {'line': b'  ament_target_dependencies() is deprecated.  Use target_link_libraries()\n'}
+[2.463338] (fake_robot) StderrLine: {'line': b'  with modern CMake targets instead.  Try replacing this call with:\n'}
+[2.463520] (fake_robot) StderrLine: {'line': b'\n'}
+[2.463698] (fake_robot) StderrLine: {'line': b'    target_link_libraries(fake_robot PUBLIC\n'}
+[2.463874] (fake_robot) StderrLine: {'line': b'      ${geometry_msgs_TARGETS}\n'}
+[2.464047] (fake_robot) StderrLine: {'line': b'      ${nav_msgs_TARGETS}\n'}
+[2.464226] (fake_robot) StderrLine: {'line': b'      ${sensor_msgs_TARGETS}\n'}
+[2.464418] (fake_robot) StderrLine: {'line': b'      ${std_msgs_TARGETS}\n'}
+[2.464591] (fake_robot) StderrLine: {'line': b'      rclcpp::rclcpp\n'}
+[2.464762] (fake_robot) StderrLine: {'line': b'      sensor_msgs::sensor_msgs_library\n'}
+[2.464932] (fake_robot) StderrLine: {'line': b'      tf2_ros::static_transform_broadcaster_node\n'}
+[2.465102] (fake_robot) StderrLine: {'line': b'      tf2_ros::tf2_ros\n'}
+[2.465294] (fake_robot) StderrLine: {'line': b'    )\n'}
+[2.465477] (fake_robot) StderrLine: {'line': b'\n'}
+[2.465649] (fake_robot) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[2.465819] (fake_robot) StderrLine: {'line': b'  CMakeLists.txt:22 (ament_target_dependencies)\n'}
+[2.465989] (fake_robot) StderrLine: {'line': b'\n'}
+[2.466159] (fake_robot) StderrLine: {'line': b'\x1b[0m\n'}
+[2.467905] (mcl_localization) StdoutLine: {'line': b'Copying ../../build/mcl_localization/mcl_localization.egg-info to /home/felix/Schreibtisch/projects/robotics_hw2/install/mcl_localization/lib/python3.12/site-packages/mcl_localization-0.0.0-py3.12.egg-info\n'}
+[2.469036] (mcl_localization) StdoutLine: {'line': b'running install_scripts\n'}
+[2.471257] (fake_robot) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.19.2 (/opt/ros/kilted/share/ament_lint_auto/cmake)\n'}
+[2.504654] (-) TimerEvent: {}
+[2.604957] (-) TimerEvent: {}
+[2.648602] (fake_robot) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[2.648986] (fake_robot) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/felix/Schreibtisch/projects/robotics_hw2/src/fake_robot/include>\n'}
+[2.649240] (fake_robot) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[2.650544] (fake_robot) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[2.650771] (fake_robot) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[2.652419] (fake_robot) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[2.653892] (fake_robot) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[2.657872] (fake_robot) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[2.658173] (fake_robot) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[2.659497] (fake_robot) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[2.662455] (fake_robot) StdoutLine: {'line': b'-- Configuring done (2.6s)\n'}
+[2.689180] (fake_robot) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[2.698402] (fake_robot) StdoutLine: {'line': b'-- Build files have been written to: /home/felix/Schreibtisch/projects/robotics_hw2/build/fake_robot\n'}
+[2.704249] (mcl_localization) StdoutLine: {'line': b"writing list of installed files to '/home/felix/Schreibtisch/projects/robotics_hw2/build/mcl_localization/install.log'\n"}
+[2.705050] (-) TimerEvent: {}
+[2.719223] (fake_robot) CommandEnded: {'returncode': 0}
+[2.720673] (fake_robot) JobProgress: {'identifier': 'fake_robot', 'progress': 'build'}
+[2.720847] (fake_robot) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/felix/Schreibtisch/projects/robotics_hw2/build/fake_robot', '--', '-j4', '-l4'], 'cwd': '/home/felix/Schreibtisch/projects/robotics_hw2/build/fake_robot', 'env': OrderedDict({'PYTHON_BASIC_REPL': '1', 'CONDA_PROMPT_MODIFIER': '', 'USER': 'felix', 'GZ_CONFIG_PATH': '/opt/ros/kilted/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/kilted/opt/zenoh_cpp_vendor/lib:/opt/ros/kilted/opt/sdformat_vendor/lib:/opt/ros/kilted/opt/gz_math_vendor/lib:/opt/ros/kilted/opt/gz_utils_vendor/lib:/opt/ros/kilted/opt/rviz_ogre_vendor/lib:/opt/ros/kilted/lib/x86_64-linux-gnu:/opt/ros/kilted/opt/gz_tools_vendor/lib:/opt/ros/kilted/opt/gz_cmake_vendor/lib:/opt/ros/kilted/lib', 'OLDPWD': '/home/felix/Schreibtisch/projects/robotics_hw2/src', 'HOME': '/home/felix', 'LESS': '-R', 'CONDA_SHLVL': '0', 'CHROME_DESKTOP': 'code.desktop', 'DESKTOP_SESSION': 'ubuntu', 'TERM_PROGRAM_VERSION': '1.106.3', 'ZSH': '/home/felix/.oh-my-zsh', 'LSCOLORS': 'Gxfxcxdxbxegedabagacad', 'GTK_MODULES': 'gail:atk-bridge', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'PAGER': 'less', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'SYSTEMD_EXEC_PID': '2514', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/home/felix/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/felix/miniconda3', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', '_colcon_cd_root': '/opt/ros/kilted/', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'kilted', 'LOGNAME': 'felix', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'ROS_VERSION': '2', 'USER_ZDOTDIR': '/home/felix', 'USERNAME': 'felix', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'PATH': '/home/felix/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/felix/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/felix/miniconda3/condabin:/opt/ros/kilted/opt/gz_tools_vendor/bin:/opt/ros/kilted/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/felix/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/felix-ThinkPad-S3-S440:@/tmp/.ICE-unix/2252,unix/felix-ThinkPad-S3-S440:/tmp/.ICE-unix/2252', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/0780de8a_9416_499a_b69f_7da4cbce78f1', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'XDG_CURRENT_DESKTOP': 'Unity', 'LANG': 'en_US.UTF-8', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/felix/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-bb46482cc877cf46.txt', 'PYTHONSTARTUP': '/home/felix/.config/Code/User/workspaceStorage/302e31aeecd85555fd23cb53f3907d5b/ms-python.python/pythonrc.py', 'VSCODE_INJECTION': '1', 'XDG_SESSION_DESKTOP': 'ubuntu', 'GNOME_TERMINAL_SERVICE': ':1.138', 'XMODIFIERS': '@im=ibus', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.UY7EJ3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'TERM_PROGRAM': 'vscode', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-97d8920bc4.sock', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/kilted', 'ROS_DOMAIN_ID': '0', 'CONDA_PYTHON_EXE': '/home/felix/miniconda3/bin/python', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'SHELL': '/usr/bin/zsh', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'CONDA_DEFAULT_ENV': '', '_CONDA_EXE': '/home/felix/miniconda3/bin/conda', 'QT_IM_MODULE': 'ibus', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'LC_ALL': 'en_US.UTF-8', 'PWD': '/home/felix/Schreibtisch/projects/robotics_hw2/build/fake_robot', 'XDG_DATA_DIRS': '/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'CONDA_EXE': '/home/felix/miniconda3/bin/conda', 'ZDOTDIR': '/home/felix', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/ros/kilted/lib/python3.12/site-packages', 'CONDA_PREFIX': '', 'COLCON': '1', 'VTE_VERSION': '7600', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/kilted/opt/sdformat_vendor:/opt/ros/kilted/opt/gz_math_vendor:/opt/ros/kilted/opt/gz_utils_vendor:/opt/ros/kilted/opt/gz_tools_vendor:/opt/ros/kilted/opt/gz_cmake_vendor:/opt/ros/kilted'}), 'shell': False}
+[2.773458] (mcl_localization) CommandEnded: {'returncode': 0}
+[2.788596] (mcl_localization) JobEnded: {'identifier': 'mcl_localization', 'rc': 0}
+[2.796264] (fake_robot) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/fake_robot.dir/src/fake_robot.cpp.o\x1b[0m\n'}
+[2.805168] (-) TimerEvent: {}
+[2.905513] (-) TimerEvent: {}
+[3.005809] (-) TimerEvent: {}
+[3.106134] (-) TimerEvent: {}
+[3.206530] (-) TimerEvent: {}
+[3.306859] (-) TimerEvent: {}
+[3.407236] (-) TimerEvent: {}
+[3.507565] (-) TimerEvent: {}
+[3.607860] (-) TimerEvent: {}
+[3.708182] (-) TimerEvent: {}
+[3.808522] (-) TimerEvent: {}
+[3.908821] (-) TimerEvent: {}
+[4.009153] (-) TimerEvent: {}
+[4.109488] (-) TimerEvent: {}
+[4.209815] (-) TimerEvent: {}
+[4.310188] (-) TimerEvent: {}
+[4.410529] (-) TimerEvent: {}
+[4.510830] (-) TimerEvent: {}
+[4.611139] (-) TimerEvent: {}
+[4.711449] (-) TimerEvent: {}
+[4.811756] (-) TimerEvent: {}
+[4.912088] (-) TimerEvent: {}
+[5.012491] (-) TimerEvent: {}
+[5.112796] (-) TimerEvent: {}
+[5.213102] (-) TimerEvent: {}
+[5.313457] (-) TimerEvent: {}
+[5.413779] (-) TimerEvent: {}
+[5.514122] (-) TimerEvent: {}
+[5.614461] (-) TimerEvent: {}
+[5.714856] (-) TimerEvent: {}
+[5.815181] (-) TimerEvent: {}
+[5.915544] (-) TimerEvent: {}
+[6.015889] (-) TimerEvent: {}
+[6.116271] (-) TimerEvent: {}
+[6.216643] (-) TimerEvent: {}
+[6.316954] (-) TimerEvent: {}
+[6.417250] (-) TimerEvent: {}
+[6.517555] (-) TimerEvent: {}
+[6.617884] (-) TimerEvent: {}
+[6.718234] (-) TimerEvent: {}
+[6.818540] (-) TimerEvent: {}
+[6.918851] (-) TimerEvent: {}
+[7.019170] (-) TimerEvent: {}
+[7.119500] (-) TimerEvent: {}
+[7.219835] (-) TimerEvent: {}
+[7.320161] (-) TimerEvent: {}
+[7.420523] (-) TimerEvent: {}
+[7.520884] (-) TimerEvent: {}
+[7.621251] (-) TimerEvent: {}
+[7.721590] (-) TimerEvent: {}
+[7.821905] (-) TimerEvent: {}
+[7.922265] (-) TimerEvent: {}
+[8.022594] (-) TimerEvent: {}
+[8.122900] (-) TimerEvent: {}
+[8.223217] (-) TimerEvent: {}
+[8.323523] (-) TimerEvent: {}
+[8.423852] (-) TimerEvent: {}
+[8.524158] (-) TimerEvent: {}
+[8.624483] (-) TimerEvent: {}
+[8.724784] (-) TimerEvent: {}
+[8.825115] (-) TimerEvent: {}
+[8.925486] (-) TimerEvent: {}
+[9.025812] (-) TimerEvent: {}
+[9.126132] (-) TimerEvent: {}
+[9.226458] (-) TimerEvent: {}
+[9.326770] (-) TimerEvent: {}
+[9.427107] (-) TimerEvent: {}
+[9.527457] (-) TimerEvent: {}
+[9.627809] (-) TimerEvent: {}
+[9.728116] (-) TimerEvent: {}
+[9.828470] (-) TimerEvent: {}
+[9.928810] (-) TimerEvent: {}
+[10.029145] (-) TimerEvent: {}
+[10.129447] (-) TimerEvent: {}
+[10.229759] (-) TimerEvent: {}
+[10.330070] (-) TimerEvent: {}
+[10.430396] (-) TimerEvent: {}
+[10.530699] (-) TimerEvent: {}
+[10.631003] (-) TimerEvent: {}
+[10.731356] (-) TimerEvent: {}
+[10.831671] (-) TimerEvent: {}
+[10.931985] (-) TimerEvent: {}
+[11.032295] (-) TimerEvent: {}
+[11.132597] (-) TimerEvent: {}
+[11.232904] (-) TimerEvent: {}
+[11.333219] (-) TimerEvent: {}
+[11.433521] (-) TimerEvent: {}
+[11.533832] (-) TimerEvent: {}
+[11.634171] (-) TimerEvent: {}
+[11.734551] (-) TimerEvent: {}
+[11.834851] (-) TimerEvent: {}
+[11.935151] (-) TimerEvent: {}
+[12.035473] (-) TimerEvent: {}
+[12.135778] (-) TimerEvent: {}
+[12.236084] (-) TimerEvent: {}
+[12.336417] (-) TimerEvent: {}
+[12.436733] (-) TimerEvent: {}
+[12.537048] (-) TimerEvent: {}
+[12.637362] (-) TimerEvent: {}
+[12.737647] (-) TimerEvent: {}
+[12.837952] (-) TimerEvent: {}
+[12.851133] (fake_robot) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable fake_robot\x1b[0m\n'}
+[12.938074] (-) TimerEvent: {}
+[13.038483] (-) TimerEvent: {}
+[13.138922] (-) TimerEvent: {}
+[13.239291] (-) TimerEvent: {}
+[13.339668] (-) TimerEvent: {}
+[13.429871] (fake_robot) StdoutLine: {'line': b'[100%] Built target fake_robot\n'}
+[13.439801] (-) TimerEvent: {}
+[13.454378] (fake_robot) CommandEnded: {'returncode': 0}
+[13.458258] (fake_robot) JobProgress: {'identifier': 'fake_robot', 'progress': 'install'}
+[13.484876] (fake_robot) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/felix/Schreibtisch/projects/robotics_hw2/build/fake_robot'], 'cwd': '/home/felix/Schreibtisch/projects/robotics_hw2/build/fake_robot', 'env': OrderedDict({'PYTHON_BASIC_REPL': '1', 'CONDA_PROMPT_MODIFIER': '', 'USER': 'felix', 'GZ_CONFIG_PATH': '/opt/ros/kilted/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/kilted/opt/zenoh_cpp_vendor/lib:/opt/ros/kilted/opt/sdformat_vendor/lib:/opt/ros/kilted/opt/gz_math_vendor/lib:/opt/ros/kilted/opt/gz_utils_vendor/lib:/opt/ros/kilted/opt/rviz_ogre_vendor/lib:/opt/ros/kilted/lib/x86_64-linux-gnu:/opt/ros/kilted/opt/gz_tools_vendor/lib:/opt/ros/kilted/opt/gz_cmake_vendor/lib:/opt/ros/kilted/lib', 'OLDPWD': '/home/felix/Schreibtisch/projects/robotics_hw2/src', 'HOME': '/home/felix', 'LESS': '-R', 'CONDA_SHLVL': '0', 'CHROME_DESKTOP': 'code.desktop', 'DESKTOP_SESSION': 'ubuntu', 'TERM_PROGRAM_VERSION': '1.106.3', 'ZSH': '/home/felix/.oh-my-zsh', 'LSCOLORS': 'Gxfxcxdxbxegedabagacad', 'GTK_MODULES': 'gail:atk-bridge', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'PAGER': 'less', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'SYSTEMD_EXEC_PID': '2514', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/home/felix/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/felix/miniconda3', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', '_colcon_cd_root': '/opt/ros/kilted/', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'kilted', 'LOGNAME': 'felix', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'ROS_VERSION': '2', 'USER_ZDOTDIR': '/home/felix', 'USERNAME': 'felix', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'PATH': '/home/felix/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/felix/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/felix/miniconda3/condabin:/opt/ros/kilted/opt/gz_tools_vendor/bin:/opt/ros/kilted/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/felix/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/felix-ThinkPad-S3-S440:@/tmp/.ICE-unix/2252,unix/felix-ThinkPad-S3-S440:/tmp/.ICE-unix/2252', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/0780de8a_9416_499a_b69f_7da4cbce78f1', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'XDG_CURRENT_DESKTOP': 'Unity', 'LANG': 'en_US.UTF-8', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/felix/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-bb46482cc877cf46.txt', 'PYTHONSTARTUP': '/home/felix/.config/Code/User/workspaceStorage/302e31aeecd85555fd23cb53f3907d5b/ms-python.python/pythonrc.py', 'VSCODE_INJECTION': '1', 'XDG_SESSION_DESKTOP': 'ubuntu', 'GNOME_TERMINAL_SERVICE': ':1.138', 'XMODIFIERS': '@im=ibus', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.UY7EJ3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'TERM_PROGRAM': 'vscode', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-97d8920bc4.sock', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/kilted', 'ROS_DOMAIN_ID': '0', 'CONDA_PYTHON_EXE': '/home/felix/miniconda3/bin/python', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'SHELL': '/usr/bin/zsh', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'CONDA_DEFAULT_ENV': '', '_CONDA_EXE': '/home/felix/miniconda3/bin/conda', 'QT_IM_MODULE': 'ibus', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'LC_ALL': 'en_US.UTF-8', 'PWD': '/home/felix/Schreibtisch/projects/robotics_hw2/build/fake_robot', 'XDG_DATA_DIRS': '/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'CONDA_EXE': '/home/felix/miniconda3/bin/conda', 'ZDOTDIR': '/home/felix', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/ros/kilted/lib/python3.12/site-packages', 'CONDA_PREFIX': '', 'COLCON': '1', 'VTE_VERSION': '7600', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/kilted/opt/sdformat_vendor:/opt/ros/kilted/opt/gz_math_vendor:/opt/ros/kilted/opt/gz_utils_vendor:/opt/ros/kilted/opt/gz_tools_vendor:/opt/ros/kilted/opt/gz_cmake_vendor:/opt/ros/kilted'}), 'shell': False}
+[13.501874] (fake_robot) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[13.502238] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/lib/fake_robot/fake_robot\n'}
+[13.506406] (fake_robot) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/lib/fake_robot/fake_robot" to ""\n'}
+[13.506724] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/launch\n'}
+[13.506897] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/launch/fake_robot.launch.py\n'}
+[13.512950] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/data\n'}
+[13.513364] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/data/landmarks.csv\n'}
+[13.513708] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/ament_index/resource_index/package_run_dependencies/fake_robot\n'}
+[13.514002] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/ament_index/resource_index/parent_prefix_path/fake_robot\n'}
+[13.514295] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/environment/ament_prefix_path.sh\n'}
+[13.514584] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/environment/ament_prefix_path.dsv\n'}
+[13.514842] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/environment/path.sh\n'}
+[13.515108] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/environment/path.dsv\n'}
+[13.515300] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/local_setup.bash\n'}
+[13.518463] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/local_setup.sh\n'}
+[13.519319] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/local_setup.zsh\n'}
+[13.519845] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/local_setup.dsv\n'}
+[13.520329] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/package.dsv\n'}
+[13.522532] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/ament_index/resource_index/packages/fake_robot\n'}
+[13.522740] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/cmake/fake_robotConfig.cmake\n'}
+[13.522905] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/cmake/fake_robotConfig-version.cmake\n'}
+[13.523070] (fake_robot) StdoutLine: {'line': b'-- Installing: /home/felix/Schreibtisch/projects/robotics_hw2/install/fake_robot/share/fake_robot/package.xml\n'}
+[13.526327] (fake_robot) CommandEnded: {'returncode': 0}
+[13.539894] (-) TimerEvent: {}
+[13.544914] (fake_robot) JobEnded: {'identifier': 'fake_robot', 'rc': 0}
+[13.546286] (-) EventReactorShutdown: {}

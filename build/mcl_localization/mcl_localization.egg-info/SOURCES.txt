@@ -1,0 +1,17 @@
+package.xml
+setup.cfg
+setup.py
+../../build/mcl_localization/mcl_localization.egg-info/PKG-INFO
+../../build/mcl_localization/mcl_localization.egg-info/SOURCES.txt
+../../build/mcl_localization/mcl_localization.egg-info/dependency_links.txt
+../../build/mcl_localization/mcl_localization.egg-info/requires.txt
+../../build/mcl_localization/mcl_localization.egg-info/top_level.txt
+../../build/mcl_localization/mcl_localization.egg-info/zip-safe
+mcl_localization/__init__.py
+mcl_localization.egg-info/PKG-INFO
+mcl_localization.egg-info/SOURCES.txt
+mcl_localization.egg-info/dependency_links.txt
+mcl_localization.egg-info/requires.txt
+mcl_localization.egg-info/top_level.txt
+mcl_localization.egg-info/zip-safe
+resource/mcl_localization
