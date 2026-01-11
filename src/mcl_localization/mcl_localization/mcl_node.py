@@ -21,6 +21,13 @@ class MCLNode(Node):
         self.mcl = MCL()
         if not self.mcl: 
             self.get_logger().error("Could not load the MCL class!")
+
+        ## read in the landmarks.csv - could be done by subscribing to landmarks_gt topic aswell
+        lm = LandmarkManager()
+        lm.load_from_csv("/home/felix/Schreibtisch/projects/robotics_hw2/src/mcl_localization/landmarks.csv") # LMs saved in lm obj
+
+        # get min and max from x and y
+        self.mcl.landmarks_gt = lm.get_all_landmarks()
     
 
         ### Algo start ###
@@ -40,7 +47,7 @@ class MCLNode(Node):
         if not self.last_time: 
             self.last_time = t
 
-        # read out motion from the fake robot odometry
+        # read out motion from the fake robot odometry ( velocity model)
         vx = msg.twist.twist.linear.x
         vy = msg.twist.twist.linear.y
         vtheta = msg.twist.twist.angular.z # angular velocity
@@ -49,6 +56,21 @@ class MCLNode(Node):
         dt = t - self.last_time
 
         self.mcl.motionUpdate(vx, vy, vtheta, dt)
+
+    def landmark_callback(self, msg: PointCloud2): 
+        self.mcl.landmarks_observed = msg
+        test = 1
+
+        for p in read_points(
+            msg,
+            field_names=("x", "y", "id"),
+            skip_nans=True
+        ):
+            obs_x_r, obs_y_r, lm_id = p
+            self.mcl.landmarks_observed[lm_id] = (obs_x_r, obs_y_r)
+
+        self.mcl.measurementUpdate()
+
         
     
 def main():

@@ -14,17 +14,13 @@ class MCL:
         self.Particles = None
         
         self.particle_map = {}
-        self.landmarks = {} # maybe dont need lets see
+        self.landmarks_gt = {} # maybe dont need lets see
+        self.landmarks_observed = {}
 
     def initializeParticles(self): 
         number_of_particles = 100 # could be something else dont know   
 
-        lm = LandmarkManager()
-        lm.load_from_csv("/home/felix/Schreibtisch/projects/robotics_hw2/src/mcl_localization/landmarks.csv") # LMs saved in lm obj
-
-        # get min and max from x and y
-        landmarks = lm.get_all_landmarks()
-        coordinates = [coord for coord in landmarks.values()]
+        coordinates = [coord for coord in self.landmarks_gt.values()]
         lm_coordinates = np.array(coordinates)
 
         x_min, y_min = lm_coordinates.min(axis=0)
@@ -95,8 +91,38 @@ class MCL:
         self.Particles[:, 2] = normalize_angle_vectorized(self.Particles[:, 2])
 
         return self.Particles
-
     
+    def measurementUpdate(self): 
+        n = self.Particles.shape[0]
+
+        particles_x_vec = self.Particles[:,0]
+        particles_y_vec = self.Particles[:,1]
+        particles_theta_vec = self.Particles[:,2] 
+
+        cos_theta_vec = np.cos(particles_theta_vec)
+        sin_theta_vec = np.sin(particles_theta_vec)
+
+        predicted_in_robot = {} 
+
+        # for each obs landmark find the gt landmark with the id
+        # for each particle check the distance between the gt landmark and the particle
+        # transfer this into robot frame and save the new x-y vectors for all particles
+    
+        for lm_id, (x_obs, y_obs) in self.landmarks_observed.items():
+           
+           x_map, y_map = self.landmarks_gt[lm_id] 
+
+           dx = x_map - particles_x_vec
+           dy = y_map - particles_y_vec
+
+           x_robot = cos_theta_vec * dx + sin_theta_vec * dy
+           y_robot = -sin_theta_vec * dx + cos_theta_vec * dy
+
+           # is numpy conform - x_robot and y_robot both have the length (rows) of the Particle Matrix
+           predicted_in_robot[lm_id] = (x_robot, y_robot)
+
+           # Todo: implement likelihood for the particles with the landmarks_observed
+
     # ======================================================================
     # Angle Normalization
     # ======================================================================
