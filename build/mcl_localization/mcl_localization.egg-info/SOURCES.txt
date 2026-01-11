@@ -1,3 +1,4 @@
+LICENSE
 package.xml
 setup.cfg
 setup.py
@@ -8,10 +9,11 @@ setup.py
 ../../build/mcl_localization/mcl_localization.egg-info/top_level.txt
 ../../build/mcl_localization/mcl_localization.egg-info/zip-safe
 mcl_localization/__init__.py
-mcl_localization.egg-info/PKG-INFO
-mcl_localization.egg-info/SOURCES.txt
-mcl_localization.egg-info/dependency_links.txt
-mcl_localization.egg-info/requires.txt
-mcl_localization.egg-info/top_level.txt
-mcl_localization.egg-info/zip-safe
+mcl_localization/landmark_manager.py
+mcl_localization/mcl.py
+mcl_localization/mcl_node.py
 resource/mcl_localization
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
+test/test_xmllint.py
