@@ -2,13 +2,14 @@ import math
 import numpy as np
 from landmark_manager import LandmarkManager
 
-class MCL: 
+class MCL:
 
     def __init__(self):
         
         # those variables will be set by the tests at the end 
         self.sigma_trans = 0.01
         self.sigma_rotation = 0.01
+        self.sigma_sensor_noise = 0.01
 
         # particle matrix in shape N,3 (x, y, theta)
         self.Particles = None
@@ -94,7 +95,7 @@ class MCL:
     
     def measurementUpdate(self): 
         n = self.Particles.shape[0]
-
+        eps = 1e-12 # just a very small number not not get 0 somewhere
         particles_x_vec = self.Particles[:,0]
         particles_y_vec = self.Particles[:,1]
         particles_theta_vec = self.Particles[:,2] 
@@ -108,21 +109,39 @@ class MCL:
         # for each particle check the distance between the gt landmark and the particle
         # transfer this into robot frame and save the new x-y vectors for all particles
     
+
+        new_particle_weights = np.ones(n)
         for lm_id, (x_obs, y_obs) in self.landmarks_observed.items():
            
            x_map, y_map = self.landmarks_gt[lm_id] 
 
-           dx = x_map - particles_x_vec
+           dx = x_map - particles_x_vec # diff between particle and map coord
            dy = y_map - particles_y_vec
-
-           x_robot = cos_theta_vec * dx + sin_theta_vec * dy
+           
+           # transform world --> robot frame
+           x_robot = cos_theta_vec * dx + sin_theta_vec * dy 
            y_robot = -sin_theta_vec * dx + cos_theta_vec * dy
-
+           
            # is numpy conform - x_robot and y_robot both have the length (rows) of the Particle Matrix
            predicted_in_robot[lm_id] = (x_robot, y_robot)
 
+           #likelihood 
+           likelihood_per_lm = np.exp(-((x_obs - x_robot)**2 + (y_obs - y_robot)**2) / (2.0*self.sigma_sensor_noise**2))
            # Todo: implement likelihood for the particles with the landmarks_observed
+           # question for likelihood: If robots at pose x, how likely it would be to see oberservation z
+           new_particle_weights *= likelihood_per_lm
 
+        normalize_factor = np.sum(new_particle_weights) 
+
+        if normalize_factor < eps: 
+            new_particle_weights[:] = 1.0 / n
+
+        else: 
+            new_particle_weights /= normalize_factor
+        
+        self.particle_weights = new_particle_weights
+
+        return self.particle_weights
     # ======================================================================
     # Angle Normalization
     # ======================================================================
