@@ -1,6 +1,5 @@
 import math
 import numpy as np
-from landmark_manager import LandmarkManager
 
 class MCL:
 
@@ -10,8 +9,10 @@ class MCL:
         self.sigma_trans = 0.01
         self.sigma_rotation = 0.01
         self.sigma_sensor_noise = 0.01
-
+        self.sample_threshold = 0.5
+        
         # particle matrix in shape N,3 (x, y, theta)
+        self.number_of_particles = 100 # could be something else dont know   
         self.Particles = None
         
         self.particle_map = {}
@@ -19,7 +20,6 @@ class MCL:
         self.landmarks_observed = {}
 
     def initializeParticles(self): 
-        number_of_particles = 100 # could be something else dont know   
 
         coordinates = [coord for coord in self.landmarks_gt.values()]
         lm_coordinates = np.array(coordinates)
@@ -28,10 +28,10 @@ class MCL:
         x_max, y_max = lm_coordinates.max(axis=0)
 
         # sample points from the found range  
-        xs = np.random.uniform(x_min, x_max, size=number_of_particles)
-        ys = np.random.uniform(y_min, y_max, size=number_of_particles)
-        thetas = np.random.uniform(-np.pi, np.pi, size=number_of_particles)
-        weights = np.ones(number_of_particles) / number_of_particles
+        xs = np.random.uniform(x_min, x_max, size=self.number_of_particles)
+        ys = np.random.uniform(y_min, y_max, size=self.number_of_particles)
+        thetas = np.random.uniform(-np.pi, np.pi, size=self.number_of_particles)
+        weights = np.ones(self.number_of_particles) / self.number_of_particles
         
         # put coordinates in matrix and just stack the columns in a Particle Matrix and save it
         self.Particles = np.column_stack((xs, ys, thetas))
@@ -43,6 +43,18 @@ class MCL:
     # Propagate all particles using a velocity motion model with Gaussian noise
     # in the lecture a odometry model is presented - maybe use that instead
     def motionUpdate(self, vx, vy, vtheta, dt):
+        '''
+        Implements the motionModel which constructs "new" particles according
+        to the ones that are already in the self.Particles Matrix (out of the resampling method from prev iteration)
+        
+        :param vx: x velocity
+        :param vy: y velocity
+        :param vtheta: angle velocity
+        :param dt: time delta to prev state
+
+        :return Particle Matrix (N,3) 
+        '''
+
 
         # Number of particles
         n = self.Particles.shape[0]
@@ -142,6 +154,54 @@ class MCL:
         self.particle_weights = new_particle_weights
 
         return self.particle_weights
+    
+
+    def resampling(self): 
+        '''
+        Implements the low-variance resampling process where only the best fitting
+        particles come into the new particles matrix according to their weights.
+        
+        '''
+        n = self.Particles.shape[0]
+
+        # normalize weights for safety - should be done in prev step
+        self.particle_weights /= np.sum(self.particle_weights)
+
+        number_of_eff_particles = 1 / np.sum(self.particle_weights**2)
+        number_of_eff_particles = number_of_eff_particles
+        
+
+        if number_of_eff_particles < self.sample_threshold*n: 
+            # here ist low variance resample algo
+            Resample_particles = np.zeros_like(self.Particles)
+            r = np.random.uniform(0.0, 1.0/n)
+            w = self.particle_weights[0]
+            i = 0
+
+            for m in range(n):
+                u = r + m / n
+                while u > w:
+                    i += 1
+                    w += self.particle_weights[i]
+                
+                Resample_particles[m] = self.Particles[i]
+        
+            # after the resampling process set equal weights
+            self.Particles = Resample_particles
+            self.particle_weights = np.ones(n) / n
+
+
+    def estimatePose(self): 
+
+        weighted_mean = np.sum(self.Particles * self.particle_weights[:, None], axis=0)
+
+        theta = self.Particles[:,2]
+        sin_mean = np.sum(np.sin(theta) * self.particle_weights)
+        cos_mean = np.sum(np.cos(theta) * self.particle_weights)
+        weighted_mean[2] = np.arctan2(sin_mean, cos_mean) 
+
+        return weighted_mean
+
     # ======================================================================
     # Angle Normalization
     # ======================================================================

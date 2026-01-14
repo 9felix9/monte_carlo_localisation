@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'mcl_node = mcl_localization.mcl_node:main'
         ],
     },
 )
