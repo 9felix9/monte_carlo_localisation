@@ -5,8 +5,9 @@ class MCL:
 
     def __init__(self, 
                  logger, 
-                 number_of_particles = 100,
-                 sigma_sensor_noise = 0.5,
+                 number_of_particles = 200,
+                 sigma_sensor_noise = 0.2,
+                 sample_threshold = 0.5,
                  alpha1 = 0.05, 
                  alpha2 = 0.05,
                  alpha3 = 0.10, 
@@ -20,11 +21,11 @@ class MCL:
         self.alpha4 = alpha4  # trans noise from rot
 
         self.sigma_sensor_noise = sigma_sensor_noise
+        self.sample_threshold = sample_threshold # for N_eff
 
         # variables for velocity modtion model 
         # self.sigma_trans = 0.2
         # self.sigma_rotation = 0.2
-        # self.sample_threshold = 0.5 # for N_eff
 
         
         # particle matrix in shape N,3 (x, y, theta)
