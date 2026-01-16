@@ -3,21 +3,45 @@ import numpy as np
 
 class MCL:
 
-    def __init__(self):
-        
-        # those variables will be set by the tests at the end 
-        self.sigma_trans = 0.01
-        self.sigma_rotation = 0.01
-        self.sigma_sensor_noise = 0.01
-        self.sample_threshold = 0.5
+    def __init__(self, 
+                 logger, 
+                 number_of_particles = 100,
+                 sigma_sensor_noise = 0.5,
+                 alpha1 = 0.05, 
+                 alpha2 = 0.05,
+                 alpha3 = 0.10, 
+                 alpha4 = 0.05,
+                 ):
+
+        # Odometry model noise parameters 
+        self.alpha1 = alpha1 # rot noise from rot
+        self.alpha2 = alpha2 # rot noise from trans
+        self.alpha3 = alpha3  # trans noise from trans
+        self.alpha4 = alpha4  # trans noise from rot
+
+        self.sigma_sensor_noise = sigma_sensor_noise
+
+        # variables for velocity modtion model 
+        # self.sigma_trans = 0.2
+        # self.sigma_rotation = 0.2
+        # self.sample_threshold = 0.5 # for N_eff
+
         
         # particle matrix in shape N,3 (x, y, theta)
-        self.number_of_particles = 100 # could be something else dont know   
+        self.number_of_particles = number_of_particles # could be something else dont know   
         self.Particles = None
-        
+        self.particle_weights = None
+
         self.particle_map = {}
         self.landmarks_gt = {} # maybe dont need lets see
         self.landmarks_observed = {}
+
+        self.logger = logger
+        # np.set_printoptions(
+        #     precision=3,      # Nachkommastellen
+        #     suppress=True,    # Keine wissenschaftliche Notation mit e
+        #     linewidth=120     # Zeilenbreite
+        #     )
 
     def initializeParticles(self): 
 
@@ -42,9 +66,9 @@ class MCL:
     
     # Propagate all particles using a velocity motion model with Gaussian noise
     # in the lecture a odometry model is presented - maybe use that instead
-    def motionUpdate(self, vx, vy, vtheta, dt):
+    def motionUpdateVelocity(self, vx, vy, vtheta, dt):
         '''
-        Implements the motionModel which constructs "new" particles according
+        Implements the velocity motionModel which constructs "new" particles according
         to the ones that are already in the self.Particles Matrix (out of the resampling method from prev iteration)
         
         :param vx: x velocity
@@ -54,7 +78,6 @@ class MCL:
 
         :return Particle Matrix (N,3) 
         '''
-
 
         # Number of particles
         n = self.Particles.shape[0]
@@ -76,9 +99,9 @@ class MCL:
         noise_theta = np.random.normal(0.0, self.sigma_rotation, n)
 
         # Noisy motion in the robot frame (one sample per particle)
-        dx_noise = dx - noise_x
-        dy_noise = dy - noise_y
-        dtheta_noise = dtheta - noise_theta
+        dx_noise = dx + noise_x
+        dy_noise = dy + noise_y
+        dtheta_noise = dtheta + noise_theta
 
         # ------------------------------------------------------------------
         # 3) Transform noisy motion from robot frame to world frame
@@ -104,6 +127,46 @@ class MCL:
         self.Particles[:, 2] = normalize_angle_vectorized(self.Particles[:, 2])
 
         return self.Particles
+    
+    def motionUpdateOdometry(self, delta_rot1, delta_trans, delta_rot2):
+        """
+        Odometry-based motion model
+        Inputs are measured odometry increments:
+        delta_rot1, delta_trans, delta_rot2
+        Updates all particles in-place.
+        """
+        n = self.Particles.shape[0]
+
+        # Variances as in the lecture model:
+        # p1: rot1 noise variance = alpha1*rot1^2 + alpha2*trans^2
+        # p2: trans noise variance = alpha3*trans^2 + alpha4*rot1^2 + alpha4*rot2^2
+        # p3: rot2 noise variance = alpha1*rot2^2 + alpha2*trans^2
+        var_rot1 = self.alpha1 * (delta_rot1 ** 2) + self.alpha2 * (delta_trans ** 2)
+        var_trans = self.alpha3 * (delta_trans ** 2) + self.alpha4 * (delta_rot1 ** 2) + self.alpha4 * (delta_rot2 ** 2)
+        var_rot2 = self.alpha1 * (delta_rot2 ** 2) + self.alpha2 * (delta_trans ** 2)
+
+        # Convert to std dev; guard against 0
+        std_rot1 = np.sqrt(max(var_rot1, 1e-12))
+        std_trans = np.sqrt(max(var_trans, 1e-12))
+        std_rot2 = np.sqrt(max(var_rot2, 1e-12))
+
+        # Sample noisy increments per particle
+        delta_rot1_hat = delta_rot1 + np.random.normal(0.0, std_rot1, n)
+        delta_trans_hat = delta_trans + np.random.normal(0.0, std_trans, n)
+        delta_rot2_hat = delta_rot2 + np.random.normal(0.0, std_rot2, n)
+
+        theta = self.Particles[:, 2]
+
+        # Apply motion (standard odom model update)
+        self.Particles[:, 0] += delta_trans_hat * np.cos(theta + delta_rot1_hat)
+        self.Particles[:, 1] += delta_trans_hat * np.sin(theta + delta_rot1_hat)
+        self.Particles[:, 2] += delta_rot1_hat + delta_rot2_hat
+
+        # Normalize to [-pi, pi] (fast vectorized)
+        self.Particles[:, 2] = (self.Particles[:, 2] + np.pi) % (2.0 * np.pi) - np.pi
+
+        return self.Particles
+
     
     def measurementUpdate(self): 
         n = self.Particles.shape[0]
@@ -139,7 +202,6 @@ class MCL:
 
            #likelihood 
            likelihood_per_lm = np.exp(-((x_obs - x_robot)**2 + (y_obs - y_robot)**2) / (2.0*self.sigma_sensor_noise**2))
-           # Todo: implement likelihood for the particles with the landmarks_observed
            # question for likelihood: If robots at pose x, how likely it would be to see oberservation z
            new_particle_weights *= likelihood_per_lm
 
@@ -151,8 +213,10 @@ class MCL:
         else: 
             new_particle_weights /= normalize_factor
         
+
         self.particle_weights = new_particle_weights
 
+        
         return self.particle_weights
     
 
@@ -179,7 +243,7 @@ class MCL:
             i = 0
 
             for m in range(n):
-                u = r + m / n
+                u = r + float(m) / float(n)
                 while u > w:
                     i += 1
                     w += self.particle_weights[i]
@@ -187,6 +251,7 @@ class MCL:
                 Resample_particles[m] = self.Particles[i]
         
             # after the resampling process set equal weights
+        
             self.Particles = Resample_particles
             self.particle_weights = np.ones(n) / n
 
@@ -211,7 +276,35 @@ class MCL:
         while angle < -math.pi:
             angle += 2.0 * math.pi
         return angle
+    
 
-if __name__ == "__main__":
-    mcl = MCL()
-    mcl.initializeParticles()        
+    def log_particles(self, stage: str, k_top=5, k_rand=5):
+        P = self.Particles
+        w = self.particle_weights
+
+        if P is None or w is None:
+            self.logger.warn(f"[{stage}] No particles or weights")
+            return
+
+        n = len(w)
+        self.logger.info(f"\n[{stage}] N={n}")
+
+        # sort by weight descending
+        idx_sorted = np.argsort(w)[::-1]
+
+        self.logger.info("Top particles by weight:")
+        for i in range(min(k_top, n)):
+            idx = idx_sorted[i]
+            x, y, th = P[idx]
+            self.logger.info(
+                f"  {i+1:02d}) idx={idx:4d}  w={w[idx]:.6f}  p=({x:.3f},{y:.3f},{th:.3f})"
+            )
+
+        self.logger.info("Random particles:")
+        rnd_idx = np.random.choice(n, size=min(k_rand, n), replace=False)
+        for idx in rnd_idx:
+            x, y, th = P[idx]
+            self.logger.info(
+                f"  idx={idx:4d}  w={w[idx]:.6f}  p=({x:.3f},{y:.3f},{th:.3f})"
+            )
+
