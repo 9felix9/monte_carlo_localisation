@@ -22,10 +22,48 @@ class MCLNode(Node):
         if not self.landmark_manager.load_from_csv("/home/felix/Schreibtisch/projects/robotics_hw2/src/mcl_localization/landmarks.csv"):
             self.get_logger().error("Could not load landmarks!")
         
-        # init mcl variables
-        self.mcl = MCL(logger=self.get_logger())
-        if not self.mcl: 
+        self.get_logger().info("Landmarks loaded")
+
+        # --- ROS parameters (for batch experiments) ---
+        self.declare_parameter("number_of_particles", 200)
+        self.declare_parameter("sigma_sensor_noise", 0.2)
+        self.declare_parameter("sample_threshold", 0.5)
+
+        # Odometry motion model noise parameters
+        self.declare_parameter("alpha1", 0.05)
+        self.declare_parameter("alpha2", 0.05)
+        self.declare_parameter("alpha3", 0.10)
+        self.declare_parameter("alpha4", 0.05)
+
+        # Read params
+        n_particles = int(self.get_parameter("number_of_particles").value)
+        sigma_sensor = float(self.get_parameter("sigma_sensor_noise").value)
+        sample_thr = float(self.get_parameter("sample_threshold").value)
+
+        a1 = float(self.get_parameter("alpha1").value)
+        a2 = float(self.get_parameter("alpha2").value)
+        a3 = float(self.get_parameter("alpha3").value)
+        a4 = float(self.get_parameter("alpha4").value)
+
+        self.get_logger().info(
+            f"Params: N={n_particles}, sigma_sensor_noise={sigma_sensor}, "
+            f"sample_threshold={sample_thr}, alphas=({a1},{a2},{a3},{a4})"
+        )
+
+        # Init MCL with parameters
+        self.mcl = MCL(
+            logger=self.get_logger(),
+            number_of_particles=n_particles,
+            sigma_sensor_noise=sigma_sensor,
+            sample_threshold=sample_thr,
+            alpha1=a1,
+            alpha2=a2,
+            alpha3=a3,
+            alpha4=a4,
+        )
+        if not self.mcl:
             self.get_logger().error("Could not load the MCL class!")
+
 
         # get min and max from x and y
         self.mcl.landmarks_gt = self.landmark_manager.get_all_landmarks()

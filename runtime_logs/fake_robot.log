@@ -1,7 +1,7 @@
-[INFO] [launch]: All log files can be found below /home/felix/.ros/log/2026-01-16-21-58-52-200950-felix-ThinkPad-S3-S440-7119
+[INFO] [launch]: All log files can be found below /home/felix/.ros/log/2026-01-17-16-24-51-903017-felix-ThinkPad-S3-S440-20332
 [INFO] [launch]: Default logging verbosity is set to INFO
-[INFO] [fake_robot-1]: process started with pid [7137]
-[fake_robot-1] [INFO] [1768597132.393634158] [fake_robot_node]: Circle parameters - radius: 5.00 m, speed: 1.00 m/s, center: (0.00, 0.00)
-[fake_robot-1] [INFO] [1768597132.394354052] [fake_robot_node]: Observation parameters - radius: 3.00 m, noise variance: 0.0100
-[fake_robot-1] [INFO] [1768597132.394383143] [fake_robot_node]: Robot noise parameters - x_var: 0.0100, y_var: 0.0100, theta_var: 0.0001
-[fake_robot-1] [INFO] [1768597132.394696756] [fake_robot_node]: Loaded 100 landmarks
+[INFO] [fake_robot-1]: process started with pid [20348]
+[fake_robot-1] [INFO] [1768663492.063756832] [fake_robot_node]: Circle parameters - radius: 5.00 m, speed: 1.00 m/s, center: (0.00, 0.00)
+[fake_robot-1] [INFO] [1768663492.063901513] [fake_robot_node]: Observation parameters - radius: 3.00 m, noise variance: 0.0100
+[fake_robot-1] [INFO] [1768663492.063921531] [fake_robot_node]: Robot noise parameters - x_var: 0.0100, y_var: 0.0100, theta_var: 0.0001
+[fake_robot-1] [INFO] [1768663492.064341891] [fake_robot_node]: Loaded 100 landmarks
